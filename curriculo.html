@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="pt-BR">
+  
+  <head>
+    <!-- Configura caracteres e responsividade -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título da aba -->
+    <title>Currículo | Joicy Alves Machado</title>
+
+    <!-- Fonte externa (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Ícones externos (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Reaproveitamento do CSS Global existente -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ==========================================================================
+       MENU DE NAVEGAÇÃO FIXO
+       ========================================================================== -->
+    <header class="navbar">
+      <nav class="nav-container">
+        <h2 class="logo">Joicy <span>Alves</span></h2>
+
+        <!-- Menu de Links -->
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li>
+            <a href="curriculo.html" class="nav-link active">Currículo</a>
+          </li>
+          <li>
+            <a href="certificados.html" class="nav-link">Certificações</a>
+          </li>
+          <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+
+          <!-- CORREÇÃO: Caminho atualizado letra por letra com o nome exato da imagem -->
+          <li>
+            <a
+              href="pdf/joicy-alves-machado-cv.pdf"
+              download="Joicy_Alves_Machado_Curriculo.pdf"
+              class="nav-link"
+              aria-label="Baixar o currículo de Joicy Alves em formato PDF" onclick="return confirm('Deseja realmente baixar o currículo em PDF?');"
+              >Baixar CV</a
+            >
+          </li>
+        </ul>
+
+        <!-- Botão Hambúrguer para Mobile -->
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL DO CURRÍCULO -->
+    <main class="sobre-page-main">
+      <!-- 1. HERO INICIAL COM INFORMAÇÕES DE LOCALIDADE E MUDANÇA -->
+      <section class="sobre-banner">
+        <div class="sobre-banner-container fade-enter">
+          <h1>Joicy Alves Machado</h1>
+          <p
+            class="card-subtitle-inner"
+            style="font-size: 1.2rem; margin-bottom: 5px"
+          >
+            Administração Geral • Recrutamento & Seleção • Gestão de Pessoas
+          </p>
+          <p
+            style="
+              font-size: 0.95rem;
+              color: rgba(255, 255, 255, 0.7);
+              margin-bottom: 20px;
+            "
+          >
+            Rio Verde - GO | Disponibilidade para mudança para São Paulo
+            (Dez/2026)
+          </p>
+
+          <!-- Botões Rápidos de Ação -->
+          <div class="botoes" style="justify-content: center">
+            <!-- CORREÇÃO: Caminho atualizado letra por letra com o nome exato da imagem -->
+            <a href="pdf/joicy-alves-machado-cv.pdf" download="Joicy_Alves_Machado_Curriculo.pdf" class="btn btn-primary" class="btn btn-primary" onclick="return confirm('Deseja realmente baixar o currículo em PDF?');">Baixar CV (PDF)</class=>
+
+            <a
+              href="contato.html"
+              class="btn btn-primary"
+              aria-label="Navegar para página de contato"
+              >Entrar em Contato</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. RESUMO PROFISSIONAL CALIBRADO -->
+      <section class="sobre-secao">
+        <div class="sobre-container-restrito">
+          <div class="card-modern card-historia">
+            <div class="card-icon"><i class="fas fa-file-alt"></i></div>
+            <h3 class="card-title">Resumo Profissional</h3>
+            <p class="card-text" style="text-align: center">
+              Graduanda em Administração Geral com foco em Recrutamento e
+              Seleção, Gestão de Pessoas e Rotinas Administrativas, em busca de
+              uma oportunidade de estágio na área. Desenvolve competências
+              técnicas de forma autodidata voltadas à organização de processos
+              e análise de informações, combinando uma sólida base teórica com
+              proatividade e resiliência construídas na experiência prática em
+              vendas e atendimento ao cliente. Apresenta facilidade para
+              aprender novas ferramentas corporativas e cultiva também
+              interesse complementar por tecnologia e lógica de programação.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. HABILIDADES TÉCNICAS E PERFIL -->
+      <section class="sobre-secao">
+        <div class="sobre-container-restrito">
+          <h2 class="sobre-titulo-secao">Habilidades e Competências</h2>
+
+          <div class="sobre-grid-cards">
+            <!-- Bloco 1: Gestão -->
+            <div class="card-modern">
+              <div class="card-icon-tech"><i class="fas fa-tasks"></i></div>
+              <h3 class="card-title">Gestão & Negócios</h3>
+              <ul class="card-list" style="margin-top: 15px">
+                <li>Rotinas Administrativas</li>
+                <li>Planejamento & Organização</li>
+                <li>Pesquisa de Informações</li>
+                <li>Atendimento ao Público</li>
+              </ul>
+            </div>
+
+            <!-- Bloco 2: Tecnologia em Andamento -->
+            <div class="card-modern">
+              <div class="card-icon-tech">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <h3 class="card-title">Tecnologia & Dados</h3>
+              <ul class="card-list" style="margin-top: 15px">
+                <li>Microsoft Power BI</li>
+                <li>Python 3 <span>(Mundo 1 em Andamento)</span></li>
+                <li>Microsoft Excel</li>
+                <li>HTML5 & CSS3 Básicos</li>
+              </ul>
+            </div>
+
+            <!-- Bloco 3: Soft Skills -->
+            <div class="card-modern">
+              <div class="card-icon-tech"><i class="fas fa-lightbulb"></i></div>
+              <h3 class="card-title">Perfil Profissional</h3>
+              <ul class="card-list" style="margin-top: 15px">
+                <li>Capacidade Analítica</li>
+                <li>Resolução de Problemas</li>
+                <li>Comunicação Assertiva</li>
+                <li>Trabalho em Equipe</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. EXPERIÊNCIA PROFISSIONAL COM RESULTADOS -->
+      <section class="sobre-secao">
+        <div class="sobre-container-restrito">
+          <h2 class="sobre-titulo-secao">Experiência Profissional</h2>
+
+          <div class="sobre-grid-cards grid-experiencias">
+            <div class="card-modern card-experiencia-item">
+              <div class="exp-header">
+                <div>
+                  <h3
+                    class="card-title"
+                    style="margin-bottom: 5px; text-align: left"
+                  >
+                    Vendedora PAP (Porta a Porta)
+                  </h3>
+                  <h4 class="card-subtitle-inner" style="margin-bottom: 0">
+                    Metacom Serviços em Telecomunicações
+                  </h4>
+                </div>
+                <span class="exp-periodo">2020 </span>
+              </div>
+              <div class="exp-body" style="margin-top: 20px">
+                <p
+                  class="card-text"
+                  style="
+                    text-align: left;
+                    font-weight: 600;
+                    margin-bottom: 8px;
+                    color: var(--accent-color);
+                  "
+                >
+                  Principais Atividades:
+                </p>
+                <p
+                  class="card-text"
+                  style="text-align: left; margin-bottom: 15px"
+                >
+                  Realização de vendas externas focadas em serviços de
+                  telecomunicação. Atendimento direto e consultivo ao público,
+                  identificando necessidades para conversão de vendas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+     <!-- RODAPÉ CORPORATIVO OFICIAL DO SITE -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>&copy; 2026 Joicy Alves Machado. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+        <!-- Script para abrir e fechar o menu no celular -->
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      menuToggle.addEventListener('click', () => {
+        // Liga/Desliga a classe "active" que mostra o menu
+        navMenu.classList.toggle('active');
+        
+        // Efeito visual simples nos 3 risquinhos (opcional)
+        menuToggle.classList.toggle('is-active');
+      });
+    </script>
+  </body>
+</html>
+
+  </body>
+</html>

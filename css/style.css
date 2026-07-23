@@ -1,0 +1,963 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES, GESTÃO DE CORES E RESET GERAL
+   ========================================================================== */
+:root {
+  --bg-gradient: linear-gradient(135deg, #000000, #120308);
+  --bg-navbar: rgba(0, 0, 0, 0.85);
+  --bg-card: #120308; /* Vinho fosco oficial do Mood Board */
+
+  --primary-color: #4d0b22; /* Vinho Bordô executivo */
+  --hover-color: #dcbca9; /* Nude Rosado */
+  --accent-color: #a79383; /* Taupe Acinzentado */
+
+  --text-main: #efecef; /* Branco Acetinado */
+  --text-muted: #dcbca9; /* Nude Rosado para sub-headlines */
+  --text-body: #ddd9d2; /* Off-White Gelo para descrições longas */
+  --transition-smooth: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Componentes Universais de Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+.btn-primary:hover {
+  transform: translateY(-4px);
+  background: var(--hover-color);
+  color: #000000;
+  box-shadow: 0 8px 20px rgba(77, 11, 34, 0.35);
+}
+
+/* Componente de Redes Sociais */
+.redes {
+  display: flex;
+  gap: 25px;
+  margin-top: 5px;
+}
+.redes a {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: var(--transition-smooth);
+}
+.redes a:hover {
+  color: var(--hover-color);
+  transform: translateY(-3px);
+}
+
+/* Componente Estrutural de Títulos das Páginas Internas */
+.sobre-page-main {
+  width: 100%;
+  padding-top: 40px;
+}
+.sobre-banner {
+  width: 100%;
+  padding: 110px 40px 40px 40px;
+  text-align: left;
+}
+.sobre-banner-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+.sobre-banner-container h1,
+.page-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+.sobre-banner-container p,
+.page-subtitle,
+.ct-hero-subtitle {
+  font-size: 1.08rem;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 850px;
+  line-height: 1.7;
+}
+.text-white-highlight {
+  color: #ffffff;
+  font-weight: 600;
+}
+.sobre-secao,
+.projects-gallery-section {
+  width: 100%;
+  padding: 30px 0 60px 0;
+}
+.sobre-container-restrito,
+.main-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+.sobre-titulo-secao {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(167, 147, 131, 0.15);
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+/* Componente Padrão de Cartões Executivos */
+.card-modern {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(167, 147, 131, 0.15);
+  border-radius: 8px;
+  padding: 40px 30px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--transition-smooth);
+  width: 100%;
+}
+.card-modern:hover {
+  border-color: var(--hover-color);
+  transform: translateY(-5px);
+}
+.card-icon,
+.card-icon-tech {
+  font-size: 2.2rem;
+  color: var(--hover-color);
+  margin-bottom: 15px;
+}
+.card-title {
+  color: var(--text-main);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.card-subtitle-inner {
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.card-text {
+  color: var(--text-body);
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+.card-list {
+  list-style: none;
+  width: 100%;
+}
+.card-list li {
+  color: var(--text-body);
+  font-size: 0.96rem;
+  line-height: 1.8;
+  margin-bottom: 6px;
+}
+.card-list li span {
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+/* ==========================================================================
+   2. NAVBAR FIXA (MENU SUPERIOR GLOBAL COM SUPORTE A LOGO)
+   ========================================================================== */
+header.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: var(--bg-navbar);
+  border-bottom: 1px solid rgba(167, 147, 131, 0.1);
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+.logo span {
+  color: var(--accent-color);
+}
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+}
+.navbar-logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: var(--transition-smooth);
+}
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+.nav-link {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: var(--transition-smooth);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--hover-color);
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-main);
+  transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   3. SEÇÃO HERO (PÁGINA HOME - INDEX.HTML)
+   ========================================================================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 140px 40px 60px 40px;
+}
+.hero-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.hero-profile {
+  display: flex;
+  justify-content: flex-start;
+}
+.hero-profile img {
+  width: 300px;
+  height: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid rgba(167, 147, 131, 0.25);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+}
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+}
+.hero-typing-intro {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+.hero-title-fixed {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.hero-role-fixed {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+.hero-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+}
+.home-badges-wrapper {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.home-cta-wrapper {
+  display: block;
+  margin-bottom: 40px;
+}
+.botoes {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+/* ==========================================================================
+   4. SEÇÃO GRIDS COMPARTILHADOS (SOBRE / CURRÍCULO / CERTIFICADOS)
+   ========================================================================== */
+.cards-grid,
+.sobre-grid-cards,
+.grid-galeria-certificados {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+/* Customização da Página Sobre Interna */
+.sobre-page-main .card-historia {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px 40px;
+}
+.sobre-page-main .card-historia .card-text {
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+/* Customização da Página de Currículo */
+.curriculo-secao-centralizado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.curriculo-secao-centralizado .botoes {
+  justify-content: center;
+  margin-top: 20px;
+}
+.grid-experiencias {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+}
+.card-experiencia-item {
+  align-items: flex-start;
+  text-align: left;
+  padding: 40px;
+}
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid rgba(167, 147, 131, 0.15);
+  padding-bottom: 12px;
+}
+.exp-periodo {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(77, 11, 34, 0.3);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* Customização da Galeria de Certificados (Imagens Emolduradas) */
+.card-cert-galeria {
+  padding: 24px;
+}
+.cert-img-container {
+  width: 100%;
+  height: 180px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid rgba(167, 147, 131, 0.2);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.cert-img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.cert-body-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cert-body-content h3 {
+  font-size: 1.22rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 6px;
+  line-height: 1.4;
+  min-height: 44px;
+}
+.card-text-meta {
+  color: #a79383;
+  font-size: 0.88rem;
+  margin-bottom: 15px;
+}
+.btn-ver-cert {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 0.8rem;
+}
+/* ==========================================================================
+   5. PÁGINA: PROJETOS (PROJETOS.HTML) - GALERIA EDITORIAL
+   ========================================================================== */
+.projects-hero {
+  padding: 110px 40px 20px 40px;
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.projects-intro-box {
+  max-width: 1100px;
+  margin: 0 auto 40px auto;
+  background: var(--bg-card);
+  border: 1px solid rgba(167, 147, 131, 0.15);
+  padding: 24px 30px;
+  border-radius: 6px;
+  text-align: center;
+}
+.intro-text {
+  font-size: 1rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+.project-card {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(167, 147, 131, 0.15);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.project-img-container {
+  width: 100%;
+  height: 180px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid rgba(167, 147, 131, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.project-img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.project-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.status-done {
+  background-color: #155724;
+  color: #d4edda;
+}
+.status-progress {
+  background-color: #721c24;
+  color: #f8d7da;
+}
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+.project-date {
+  font-size: 0.88rem;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+}
+.project-content h4 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+.project-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ddd9d2;
+  margin-bottom: 20px;
+}
+.project-tech-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+.tech-badge {
+  background: rgba(220, 188, 169, 0.1);
+  border: 1px solid rgba(220, 188, 169, 0.25);
+  color: #dcbca9;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.82rem;
+}
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: auto;
+}
+.project-git-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  transition: var(--transition-smooth);
+}
+.project-git-link:hover {
+  color: var(--hover-color);
+}
+
+/* ==========================================================================
+   6. PÁGINA: CONTATO (CONTATO.HTML) - LARGURA TOTAL E ALINHAMENTO
+   ========================================================================== */
+.ct-glass-card {
+  width: 100%;
+}
+.ct-layout-grid-two {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  width: 100%;
+  align-items: start;
+}
+.ct-info-block,
+.ct-channels-block {
+  background-color: var(--bg-card);
+  border: 1px solid rgba(167, 147, 131, 0.15);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+}
+.ct-card-badge-icon {
+  font-size: 2rem;
+}
+.ct-block-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  border-bottom: 1px solid rgba(167, 147, 131, 0.1);
+  padding-bottom: 10px;
+}
+.ct-block-text {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #ddd9d2;
+}
+.ct-availability-banner {
+  background: rgba(167, 147, 131, 0.08);
+  border: 1px solid rgba(167, 147, 131, 0.2);
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  color: var(--text-main);
+}
+.ct-channel-row-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 15px;
+  border-radius: 6px;
+  background: #0c0d12;
+  border: 1px solid rgba(167, 147, 131, 0.15);
+  transition: var(--transition-smooth);
+  width: 100%;
+}
+.ct-channel-row-link:hover {
+  border-color: var(--hover-color);
+}
+.ct-icon-square {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+.ct-channel-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ct-meta-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+.ct-meta-value {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+/* Correção do Formulário Enrugado de Contato */
+.contact-form,
+main form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 650px;
+  margin: 40px auto 0 auto;
+}
+.contact-form div,
+form div:has(input) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  width: 100%;
+}
+.contact-form label,
+form label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.contact-form input,
+.contact-form textarea,
+form input,
+form textarea {
+  width: 100%;
+  min-width: 100%;
+  background-color: #0c0d12;
+  border: 1px solid rgba(167, 147, 131, 0.25);
+  border-radius: 6px;
+  padding: 14px 18px;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+.contact-form input:focus,
+.contact-form textarea:focus,
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--hover-color);
+  box-shadow: 0 0 8px rgba(220, 188, 169, 0.15);
+}
+.contact-form textarea,
+form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+.contact-form button,
+form button {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  width: auto;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+.contact-form button:hover,
+form button:hover {
+  background-color: var(--hover-color);
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   7. RESPONSIVIDADE EXECUTIVA COMPLETA (AMBIENTE MOBILE)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .hero-profile {
+    justify-content: center;
+  }
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  .home-badges-wrapper,
+  .botoes {
+    justify-content: center;
+  }
+  .navbar-logo-img {
+    height: 36px;
+  }
+  .contact-form button,
+  form button {
+    width: 100%;
+    align-self: center;
+  }
+
+  /* Todas as colunas horizontais colapsam para vertical nos celulares */
+  .cards-grid,
+  .sobre-grid-cards,
+  .grid-galeria-certificados,
+  .projects-grid,
+  .ct-layout-grid-two {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .sobre-container-restrito,
+  .main-container {
+    padding: 0 15px;
+  }
+  .cert-img-container,
+  .project-img-container {
+    height: 160px;
+  }
+}
+/* ==========================================================================
+   ALINHAMENTO CIRÚRGICO: CENTRALIZAR BANNER DO CURRÍCULO
+   ========================================================================== */
+
+/* Força todo o conteúdo do banner superior a se comportar no centro */
+.sobre-banner-container,
+main .sobre-banner-container,
+section.sobre-banner div {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; /* Trava a foto e caixas no centro */
+  text-align: center !important; /* Centraliza todas as linhas de texto */
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+}
+
+/* Captura e joga a sua linha de botões para o meio exato */
+.sobre-banner-container .botoes,
+.sobre-banner-container div:has(> .btn),
+main .botoes {
+  display: flex !important;
+  justify-content: center !important; /* Move os botões para o centro */
+  align-items: center !important;
+  gap: 16px !important; /* Distância elegante entre eles */
+  width: 100% !important;
+  margin: 25px auto 0 auto !important; /* Centraliza o bloco na horizontal */
+}
+
+/* Garante que os botões individuais não quebrem e fiquem simétricos */
+.sobre-banner-container .btn,
+main .botoes .btn {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+/* ==========================================================================
+   BLINDAGEM DA HOME: TRAVA EM 3 COLUNAS LADO A LADO (SOBRE MIM NA INDEX)
+   ========================================================================== */
+
+/* 1. Força a div pai da seção sobre na Home a se espalhar na horizontal */
+#sobre-resumo .cards-grid,
+.about-summary-section .cards-grid,
+main:not(.sobre-page-main) .cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ) !important; /* Trava em 3 colunas laterais no computador */
+  gap: 30px !important; /* Distância simétrica de respiro entre os cartões */
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 40px auto 0 auto !important; /* Centraliza a grade na tela */
+}
+
+/* 2. Garante que cada um dos 3 cards volte a ser um bloco independente */
+#sobre-resumo .card-modern,
+.about-summary-section .card-modern,
+main:not(.sobre-page-main) .card-modern {
+  background-color: var(
+    --bg-card
+  ) !important; /* Aplica o Vinho do Mood Board */
+  border: 1px solid rgba(167, 147, 131, 0.15) !important; /* Borda cirúrgica Taupe */
+  border-radius: 8px !important;
+  padding: 45px 30px !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6) !important;
+  display: flex !important;
+  flex-direction: column !important; /* Alinha o conteúdo interno na vertical */
+  align-items: center !important;
+  text-align: center !important;
+  width: 100% !important;
+}
+
+/* 3. Limpa listas internas (como as linguagens em Atualmente) para não vazarem */
+#sobre-resumo .card-list,
+.about-summary-section .card-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 15px 0 0 0 !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+#sobre-resumo .card-list li,
+.about-summary-section .card-list li {
+  color: #ddd9d2 !important; /* Off-White Gelo */
+  font-size: 0.95rem !important;
+  line-height: 1.8 !important;
+  margin-bottom: 6px !important;
+}
+
+/* Responsividade: Garante que quebre para vertical APENAS em telas de celular */
+@media (max-width: 992px) {
+  #sobre-resumo .cards-grid,
+  .about-summary-section .cards-grid,
+  main:not(.sobre-page-main) .cards-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 10px !important;
+  }
+}
+/* ==========================================================================
+   ALINHAMENTO PREMIUM: CENTRALIZAR TÍTULO DA SEÇÃO SOBRE MIM (HOME INDEX)
+   ========================================================================== */
+
+/* Captura o título e subtítulo externos e os trava no centro exato */
+#sobre-resumo .section-title,
+#sobre-resumo .section-subtitle,
+.about-summary-section .section-title,
+.about-summary-section .section-subtitle,
+#sobre-resumo h2,
+#sobre-resumo p:first-of-type {
+  text-align: center !important; /* Move as linhas de texto para o meio */
+  width: 100% !important;
+  max-width: 1100px !important; /* Mesma largura mestre dos cartões */
+  margin-left: auto !important;  /* Margens mágicas automáticas horizontais */
+  margin-right: auto !important; /* Forçam o navegador a equilibrar os dois lados */
+  padding: 0 !important;
+}
+
+/* Garante um respiro sutil abaixo do subtítulo antes de abrir a grade */
+#sobre-resumo .section-subtitle,
+.about-summary-section .section-subtitle,
+#sobre-resumo p:first-of-type {
+  margin-bottom: 50px !important; 
+}
+/* ==========================================
+   ATIVAÇÃO DO MENU HAMBÚRGUER NO MOBILE
+   ========================================== */
+@media (max-width: 860px) {
+  /* Mostra o botão de três risquinhos no celular */
+  .menu-toggle {
+    display: flex !important;
+    position: absolute;
+    right: 20px;
+    top: 22px;
+  }
+
+  /* Transforma o menu em uma lista oculta que desliza de cima */
+  .nav-menu {
+    display: none; /* Esconde o menu por padrão */
+    flex-direction: column;
+    width: 100%;
+    background: var(--bg-navbar);
+    padding: 20px 0;
+    gap: 20px;
+    border-top: 1px solid rgba(167, 147, 131, 0.1);
+    margin-top: 15px;
+  }
+
+  /* Classe mágica que o JavaScript vai ativar para MOSTRAR o menu */
+  .nav-menu.active {
+    display: flex;
+  }
+
+  /* Alinha o topo para não quebrar com o botão na direita */
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+}

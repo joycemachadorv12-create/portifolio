@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <style>
+      @media (max-width: 768px) {
+        p, .card-text, .ct-block-text, .sobre-text {
+          text-align: left !important;
+          word-spacing: normal !important;
+          letter-spacing: normal !important;
+        }
+      }
+    </style>
+    <!-- Configura caracteres e responsividade -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título da aba -->
+    <title>Sobre Mim | Joicy Alves Machado</title>
+
+    <!-- Fonte externa (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Ícones externos (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Reaproveitamento total do CSS existente -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- REAPROVEITAMENTO DO MENU DE NAVEGAÇÃO FIXO DA HOME -->
+    <header class="navbar">
+      <nav class="nav-container">
+        <h2 class="logo">Joicy <span>Alves</span></h2>
+
+        <!-- Lista de links de navegação (A classe 'active' agora aponta para o Sobre) -->
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="sobre.html" class="nav-link active">Sobre</a></li>
+          <li><a href="curriculo.html" class="nav-link">Currículo</a></li>
+           <!-- Link Certificações posicionado logo após o Currículo -->
+    <li><a href="certificados.html" class="nav-link">Certificações</a></li>
+          <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+        <li><a href="pdf/joicy-alves-machado-cv.pdf" download="Joicy_Alves_Machado_Curriculo.pdf" class="nav-link" aria-label="Baixar o currículo de Joicy Alves em formato PDF" onclick="return confirm('Deseja realmente baixar o currículo em PDF?');">Baixar CV</a></li>
+        </ul>
+
+        <!-- Botão Hambúrguer para Mobile -->
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL DA PÁGINA SOBRE -->
+    <main class="sobre-page-main">
+      <!-- 1. BANNER DA PÁGINA (Com animação de entrada idêntica à Home) -->
+      <section class="sobre-banner">
+        <div class="sobre-banner-container fade-enter">
+          <h1>Sobre Mim</h1>
+          <p>
+            Conheça um pouco mais sobre minha trajetória, meus estudos e meus
+            objetivos profissionais.
+          </p>
+        </div>
+      </section>
+
+      <!-- 2. MINHA HISTÓRIA -->
+      <section class="sobre-secao">
+        <div class="sobre-container-restrito">
+          <div class="card-modern card-historia">
+            <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+            <h3 class="card-title">Minha História</h3>
+            <p class="card-text">
+              Sou graduanda em Administração Geral e movida pelo forte propósito
+              de que o aprendizado contínuo é a chave fundamental para a
+              evolução humana e profissional. Encaro novos desafios com
+              entusiasmo e determinação, transformando obstáculos em
+              combustíveis para adquirir novas competências. Estou construindo
+              minha trajetória com dedicação inabalável, sempre pautando minhas
+              ações em valores como a organização, o senso de responsabilidade,
+              a ética e a busca incessante pelo aprimoramento constante.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. MINHA FORMAÇÃO (Padronizado com o mesmo estilo dos cartões da programação) -->
+      <section class="sobre-secao">
+        <div class="sobre-container-restrito">
+          <h2 class="sobre-titulo-secao">Minha Formação</h2>
+
+          <!-- Utilizamos a mesma classe de grid que organiza em colunas simétricas -->
+          <div class="sobre-grid-cards">
+            <!-- Card 1: Graduação -->
+            <div class="card-modern">
+              <div class="card-icon-tech">
+                <i class="fas fa-university"></i>
+              </div>
+              <h3 class="card-title">Graduação em Administração</h3>
+              <h4 class="card-subtitle-inner">Ensino Superior</h4>
+              <p class="card-text">
+                Desenvolvimento sólido de competências voltadas à gestão
+                estratégica, otimização organizacional, planejamento
+                mercadológico e controle de processos administrativos
+                analíticos.
+              </p>
+            </div>
+
+            <!-- Card 2: Cursos Realizados -->
+            <div class="card-modern">
+              <div class="card-icon-tech">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <h3 class="card-title">Cursos Realizados</h3>
+              <h4 class="card-subtitle-inner">Extensão e Certificações</h4>
+              <p class="card-text">
+                Investimento constante em capacitações extracurriculares focadas
+                na resolução prática de problemas empresariais, análise de dados
+                e rotinas corporativas modernas.
+              </p>
+            </div>
+
+            <!-- Card 3: Desenvolvimento -->
+            <div class="card-modern">
+              <div class="card-icon-tech">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="card-title">Desenvolvimento Profissional</h3>
+              <h4 class="card-subtitle-inner">Evolução de Carreira</h4>
+              <p class="card-text">
+                Aplicação prática de metodologias ágeis e ferramentas de gestão,
+                aliando a teoria acadêmica ao dinamismo demandado pelo mercado
+                corporativo atual.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. MINHA JORNADA NA PROGRAMAÇÃO -->
+      <section class="sobre-secao">
+        <div class="sobre-container-restrito">
+          <h2 class="sobre-titulo-secao">Jornada na Programação</h2>
+
+          <div class="sobre-grid-cards">
+            <!-- Card Lógica -->
+            <div class="card-modern">
+              <div class="card-icon-tech"><i class="fas fa-brain"></i></div>
+              <h3 class="card-title">Lógica</h3>
+              <p class="card-text">
+                Base fundamental construída para o entendimento de algoritmos,
+                estruturas condicionais e resolução de problemas analíticos por
+                meio do pensamento estruturado.
+              </p>
+            </div>
+            <!-- Card Python -->
+            <div class="card-modern">
+              <div class="card-icon-tech"><i class="fab fa-python"></i></div>
+              <h3 class="card-title">Python</h3>
+              <p class="card-text">
+                Estudo prático focado em automação de tarefas, scripts
+                eficientes, manipulação estruturada de dados e lógica voltada ao
+                backend.
+              </p>
+            </div>
+            <!-- Card HTML5 -->
+            <div class="card-modern">
+              <div class="card-icon-tech"><i class="fab fa-html5"></i></div>
+              <h3 class="card-title">HTML5</h3>
+              <p class="card-text">
+                Estruturação semântica de interfaces web modernas e limpas,
+                garantindo a acessibilidade correta dos elementos para os
+                navegadores.
+              </p>
+            </div>
+            <!-- Card CSS3 -->
+            <div class="card-modern">
+              <div class="card-icon-tech"><i class="fab fa-css3-alt"></i></div>
+              <h3 class="card-title">CSS3</h3>
+              <p class="card-text">
+                Estilização de layouts complexos através de CSS Grid e Flexbox,
+                variáveis nativas dinâmicas e efeitos visuais glassmorphism
+                responsivos.
+              </p>
+            </div>
+            <!-- Card JavaScript -->
+            <div class="card-modern">
+              <div class="card-icon-tech"><i class="fab fa-js-square"></i></div>
+              <h3 class="card-title">JavaScript</h3>
+              <p class="card-text">
+                Manipulação dinâmica da árvore DOM, controle assíncrono de
+                interações na interface (como menus hambúrguer e animações) em
+                fase de constante evolução.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. INTERESSE EM ENGENHARIA CIVIL -->
+      <section class="sobre-secao">
+        <div class="sobre-container-restrito">
+          <div class="card-modern card-eng-civil">
+            <div class="card-icon"><i class="fas fa-drafting-compass"></i></div>
+            <h3 class="card-title">Interesse em Engenharia Civil</h3>
+            <p class="card-text">
+              A Engenharia Civil desperta minha admiração pela sua capacidade
+              intrínseca de projetar e materializar soluções estruturais
+              fundamentais para a sociedade. Identifico-me fortemente com os
+              processos de planejamento físico-financeiro de obras, o
+              gerenciamento e a organização minuciosa de cronogramas, o
+              desenvolvimento lógico e técnico de projetos e o desafio
+              intelectual que exige um aprendizado constante sobre novos
+              materiais, normas regulamentadoras e sustentabilidade construtiva.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. VALORES PROFISSIONAIS -->
+      <section class="sobre-secao">
+        <div class="sobre-container-restrito">
+          <h2 class="sobre-titulo-secao">Valores Profissionais</h2>
+
+          <!-- Os 4 Cartões de Valores Profissionais Completos -->
+          <div class="sobre-grid-cards grid-quatro-colunas">
+            <!-- Valor 1 -->
+            <div class="card-modern">
+              <div class="card-icon-valores">
+                <i class="fas fa-book-reader"></i>
+              </div>
+              <h3 class="card-title-valores">Aprendizado Contínuo</h3>
+              <p class="card-text">
+                Atualização técnica constante e curiosidade intelectual diária
+                como pilares de crescimento.
+              </p>
+            </div>
+
+            <!-- Valor 2 -->
+            <div class="card-modern">
+              <div class="card-icon-valores"><i class="fas fa-users"></i></div>
+              <h3 class="card-title-valores">Trabalho em Equipe</h3>
+              <p class="card-text">
+                Colaboração empática, comunicação clara e compartilhamento de
+                ideias para objetivos em comum.
+              </p>
+            </div>
+
+            <!-- Valor 3 -->
+            <div class="card-modern">
+              <div class="card-icon-valores">
+                <i class="fas fa-folder-open"></i>
+              </div>
+              <h3 class="card-title-valores">Organização</h3>
+              <p class="card-text">
+                Metodologia rigorosa e estruturação eficiente de processos para
+                aumentar a produtividade.
+              </p>
+            </div>
+
+            <!-- Valor 4 -->
+            <div class="card-modern">
+              <div class="card-icon-valores"><i class="fas fa-rocket"></i></div>
+              <h3 class="card-title-valores">Evolução Profissional</h3>
+              <p class="card-text">
+                Busca constante por superar metas individuais, assumir novos
+                desafios e liderar melhorias.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. SEÇÃO FINAL: OBJETIVOS INSPIRADORES -->
+      <section class="sobre-secao">
+        <div class="sobre-container-restrito">
+          <div class="card-modern card-objetivos">
+            <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+            <h3 class="card-title">Meus Objetivos</h3>
+            <p class="card-text text-center-objetivo">
+              Meu grande objetivo de carreira é consolidar uma atuação
+              profissional de excelência, onde eu possa unificar
+              estrategicamente minha sólida base de gestão em Administração
+              Geral ao poder inovador da Tecnologia e à precisão de projetos de
+              Engenharia Civil. Estou em busca contínua de novos desafios
+              complexos corporativos, mantendo minha dedicação diária focada na
+              resolução criativa de problemas reais, no desenvolvimento
+              constante e no crescimento contínuo de forma sustentável e
+              resiliente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. SEÇÃO DE CONVERSÃO (CALL TO ACTION) -->
+      <section class="sobre-fechamento">
+        <div class="sobre-container-restrito">
+          <div class="card-modern card-conclusao">
+            <div class="card-icon"><i class="fas fa-paper-plane"></i></div>
+            <h3 class="card-title">Vamos Construir Algo Juntos?</h3>
+            <p class="card-text">
+              Se você procura uma profissional dedicada, com forte foco em
+              organização, aprendizado ágil e resolução criativa de problemas,
+              entre em contato para conversarmos sobre novos projetos!
+            </p>
+            <div class="botoes-fechamento">
+              <a href="contato.html" class="btn btn-primary"
+                >Entre em Contato</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- RODAPÉ CORPORATIVO OFICIAL DO SITE -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>&copy; 2026 Joicy Alves Machado. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript de comportamento -->
+    <script src="js/script.js"></script>
+        <!-- Script para abrir e fechar o menu no celular -->
+    <script>
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+
+      menuToggle.addEventListener('click', () => {
+        // Liga/Desliga a classe "active" que mostra o menu
+        navMenu.classList.toggle('active');
+        
+        // Efeito visual simples nos 3 risquinhos (opcional)
+        menuToggle.classList.toggle('is-active');
+      });
+    </script>
+  </body>
+</html>
+
+  </body>
+</html>

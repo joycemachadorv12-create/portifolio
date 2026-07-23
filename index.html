@@ -1,0 +1,253 @@
+h<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Configura caracteres -->
+    <meta charset="UTF-8" />
+
+    <!-- Responsividade -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título da aba -->
+    <title>Joicy Alves Machado | Portfólio</title>
+
+    <!-- SEO / Compartilhamento -->
+    <meta
+      name="description"
+      content="Portfólio de Joicy Alves Machado, graduanda em Administração com foco em Recrutamento e Seleção e Gestão de Pessoas."
+    />
+    <meta property="og:title" content="Joicy Alves Machado | Portfólio" />
+    <meta
+      property="og:description"
+      content="Graduanda em Administração com foco em Recrutamento e Seleção, Gestão de Pessoas e Rotinas Administrativas."
+    />
+    <meta
+      property="og:image"
+      content="https://joycemachadorv12-create.github.io/portifolio/img/eu.jpg"
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="canonical"
+      href="https://joycemachadorv12-create.github.io/portifolio/"
+    />
+
+    <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Ícones -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Chamada Correta do CSS Local -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- Menu de Navegação Fixo com as classes corretas -->
+    <header class="navbar">
+      <nav class="nav-container">
+        <h2 class="logo">Joicy <span>Alves</span></h2>
+
+        <!-- Lista de links de navegação -->
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+          <li><a href="curriculo.html" class="nav-link">Currículo</a></li>
+
+          <!-- Link Certificações posicionado logo após o Currículo -->
+          <li>
+            <a href="certificados.html" class="nav-link">Certificações</a>
+          </li>
+          <li><a href="projetos.html" class="nav-link">Projetos</a></li>
+          <li><a href="contato.html" class="nav-link">Contato</a></li>
+          <li>
+            <a
+              href="pdf/joicy-alves-machado-cv.pdf"
+              download="Joicy_Alves_Machado_Curriculo.pdf"
+              class="nav-link"
+              aria-label="Baixar o currículo de Joicy Alves em formato PDF"
+              onclick="
+                return confirm('Deseja realmente baixar o currículo em PDF?');
+              "
+              >Baixar CV</a
+            >
+          </li>
+        </ul>
+        <!-- Botão Hambúrguer para Mobile -->
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+      <section class="hero">
+        <!-- Container interno exigido pelo CSS Grid para alinhar os blocos -->
+        <div class="hero-container">
+          <!-- Bloco da Foto de Perfil (Lado Esquerdo) -->
+          <div class="hero-profile">
+            <img src="img/eu.jpg" alt="Foto de perfil de Joicy Alves Machado" />
+          </div>
+
+          <div class="hero-content">
+            <!-- Texto estático de saudação -->
+            <p class="hero-typing-intro">Olá, Prazer</p>
+
+            <!-- Seu nome fixo e imponente -->
+            <h1 class="hero-title-fixed">Joicy Alves Machado</h1>
+
+            <!-- Suas áreas de atuação agora aparecem IMEDIATAMENTE fixas na tela -->
+            <h3 class="hero-role-fixed">
+              Graduanda em Administração • Foco em Recrutamento & Seleção e
+              Gestão de Pessoas
+            </h3>
+
+            <p>
+              Olá! Sejam bem vindo(as) ao meu portfólio. Sou graduanda em
+              Administração Geral, em busca da minha primeira oportunidade de
+              estágio nas áreas de Recursos Humanos, Recrutamento e Seleção ou
+              Rotinas Administrativas. Também desenvolvo conhecimentos em lógica
+              de programação e tecnologia, o que me ajuda a pensar processos
+              administrativos de forma mais estruturada. Aqui compartilho minha
+              trajetória, projetos, cursos e experiências que representam minha
+              evolução acadêmica e profissional.
+            </p>
+
+            <!-- Substituição dos botões antigos por Tags de Especialidades e Botão de Ação Único -->
+            <div class="home-badges-wrapper">
+              <span class="badge-tag">📊 Recrutamento & Seleção</span>
+              <span class="badge-tag">🗂️ Gestão de Pessoas</span>
+              <span class="badge-tag">💻 Lógica & Dev Web</span>
+            </div>
+
+            <div class="home-cta-wrapper">
+              <!-- CORREÇÃO: Caminho atualizado letra por letra com o nome exato da imagem -->
+              <a
+                href="pdf/joicy-alves-machado-cv.pdf"
+                download="Joicy_Alves_Machado_Curriculo.pdf"
+                class="btn btn-primary"
+                onclick="
+                  return confirm('Deseja realmente baixar o currículo em PDF?');
+                "
+                >Baixar CV Completo ➔</a
+              >
+            </div>
+
+            <!-- Seus Links de Redes Sociais originais continuam exatamente aqui -->
+            <div class="redes">
+              <a
+                href="https://github.com/joycemachadorv12-create"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="GitHub"
+                aria-label="Ver perfil do GitHub de Joicy Alves"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/joicy-alves-machado"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="LinkedIn"
+                aria-label="Ver perfil do LinkedIn de Joicy Alves"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           SEÇÃO SOBRE MIM (CARTÕES RESUMO)
+           ========================================================================== -->
+      <section id="sobre-resumo" class="about-summary-section">
+        <div class="section-container">
+          <!-- Título Principal da Seção -->
+          <h2 class="section-title">Sobre Mim</h2>
+          <p class="section-subtitle">
+            Um breve resumo da minha jornada profissional e objetivos
+          </p>
+
+          <!-- Grid dos Três Cartões Modernos -->
+          <div class="cards-grid">
+            <!-- Cartão 1: Formação -->
+            <div class="card-modern">
+              <div class="card-icon">📚</div>
+              <h3 class="card-title">Formação</h3>
+              <h4 class="card-subtitle-inner">Administração Geral</h4>
+              <p class="card-text">
+                Graduanda em Administração Geral, desenvolvendo conhecimentos em
+                gestão, organização, planejamento e processos administrativos.
+              </p>
+            </div>
+
+            <!-- Cartão 2: Atualmente -->
+            <div class="card-modern">
+              <div class="card-icon">💻</div>
+              <h3 class="card-title">Atualmente</h3>
+              <h4 class="card-subtitle-inner">Em constante aprendizado</h4>
+              <ul class="card-list">
+                <li>Lógica de Programação</li>
+                <li>Python</li>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript <span>(em desenvolvimento)</span></li>
+              </ul>
+            </div>
+
+            <!-- Cartão 3: Objetivos -->
+            <div class="card-modern">
+              <div class="card-icon">🎯</div>
+              <h3 class="card-title">Objetivos</h3>
+              <h4 class="card-subtitle-inner">Carreira multidiciplinar</h4>
+              <p class="card-text">
+                Busco desenvolver minha carreira unindo conhecimentos em:
+              </p>
+              <ul class="card-list card-list-center">
+                <li>Administração</li>
+                <li>Tecnologia</li>
+                <li>Engenharia Civil</li>
+              </ul>
+              <p class="card-text card-text-footer">
+                Sempre com foco no aprendizado contínuo, na resolução de
+                problemas e no crescimento profissional.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- RODAPÉ CORPORATIVO OFICIAL DO SITE -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p>&copy; 2026 Joicy Alves Machado. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript Local -->
+    <script src="js/script.js"></script>
+    <!-- Script para abrir e fechar o menu no celular -->
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        // Liga/Desliga a classe "active" que mostra o menu
+        navMenu.classList.toggle("active");
+
+        // Efeito visual simples nos 3 risquinhos (opcional)
+        menuToggle.classList.toggle("is-active");
+      });
+    </script>
+  </body>
+</html>
